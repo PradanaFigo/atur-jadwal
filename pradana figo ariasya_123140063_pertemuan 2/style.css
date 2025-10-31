@@ -336,3 +336,18 @@ body {
   
   /* ▲▲▲ SELESAI PERBAIKAN ▲▲▲ */
 }
+/* ▼▼▼ PERBAIKAN BARU UNTUK "DAFTAR TUGAS" ▼▼▼ */
+
+  /* Membuat input dan tombol tersusun ke bawah */
+  .controls {
+    flex-direction: column; /* SUSUN KE BAWAH */
+    gap: 8px;
+  }
+  
+  .controls input {
+    width: 100%; /* Lebar penuh */
+    min-width: 100%; /* Hapus min-width desktop */
+  }
+  
+  /* ▲▲▲ SELESAI PERBAIKAN ▲▲▲ */
+}
