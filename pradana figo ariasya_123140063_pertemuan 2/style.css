@@ -1,0 +1,338 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;800&display=swap');
+
+:root {
+  --bg: linear-gradient(180deg, #fff0f5 0%, #ffeef4 100%);
+  --glass: rgba(255, 240, 245, 0.75);
+  --muted: #a98a96;
+  --accent-1: #f78fb3;
+  --accent-2: #e64a85;
+  --card-radius: 14px;
+  --shadow: 0 10px 30px rgba(126, 47, 79, 0.08);
+  --text: #4d2d3a;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', system-ui, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 18px auto;
+  padding: 0 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.card {
+  background: var(--glass);
+  border-radius: var(--card-radius);
+  padding: 12px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: var(--shadow);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  flex-wrap: wrap; /* Biarkan default-nya wrap */
+}
+
+.header-left {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.header h1 {
+  font-size: 22px;
+  margin-bottom: 4px;
+}
+
+.muted {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.stats-row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.stat.small {
+  min-width: 110px;
+  text-align: center;
+  padding: 10px;
+}
+
+.big {
+  font-weight: 800;
+  color: var(--accent-2);
+  font-size: 18px;
+}
+
+.top-panel {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 18px;
+  padding: 16px;
+}
+
+.top-panel > *:first-child {
+  flex: 2; /* Progress 2 bagian */
+  min-width: 120px;
+}
+
+.top-panel > *:last-child {
+  flex: 1; /* Quote 1 bagian */
+  min-width: 100px;
+}
+
+.progress-bar-bg {
+  width: 100%;
+  height: 14px;
+  background: rgba(77, 45, 58, 0.06);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--accent-1), var(--accent-2));
+  transition: width 0.5s ease;
+}
+
+.content-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  align-items: start;
+}
+
+.panel {
+  padding: 16px;
+}
+
+.panel-header h2 {
+  margin-bottom: 8px;
+}
+
+.controls {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.controls input {
+  flex: 1;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(77, 45, 58, 0.06);
+  background: rgba(255, 255, 255, 0.95);
+  outline: none;
+}
+
+.controls button {
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: none;
+  background: linear-gradient(90deg, var(--accent-1), var(--accent-2));
+  color: #fff;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.filters {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.filter {
+  padding: 8px 14px;
+  border-radius: 20px;
+  background: transparent;
+  border: 1px solid rgba(77, 45, 58, 0.04);
+  cursor: pointer;
+  color: var(--muted);
+}
+
+.filter.active {
+  background: linear-gradient(
+    90deg,
+    rgba(230, 74, 133, 0.12),
+    rgba(247, 143, 179, 0.06)
+  );
+  color: var(--accent-2);
+  font-weight: 700;
+}
+
+.list {
+  margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-height: 520px;
+  overflow: auto;
+  padding-right: 6px;
+}
+
+.list-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(77, 45, 58, 0.03);
+  transition: transform 0.12s ease;
+}
+
+.list-item:hover {
+  transform: translateY(-4px);
+}
+
+.item-left {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.checkbox {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: 1px solid rgba(77, 45, 58, 0.05);
+  background: linear-gradient(180deg, #fff, #fffafc);
+}
+
+.item-meta {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.btn-sm {
+  padding: 8px 10px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.btn-edit {
+  background: transparent;
+  border: 1px solid rgba(77, 45, 58, 0.04);
+}
+
+.btn-delete {
+  background: transparent;
+  border: 1px solid rgba(255, 0, 0, 0.06);
+  color: #c43;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 8px;
+  margin-top: 6px;
+}
+
+.dark-label {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+
+/* ▼▼▼ BLOK MOBILE - SEMUA PERBAIKAN ADA DI SINI ▼▼▼ */
+@media (max-width: 1100px) {
+
+  /* Aturan umum untuk mobile */
+  .content-grid {
+    grid-template-columns: 1fr;
+  }
+  .controls input {
+    width: 100%;
+  }
+
+  /* Menumpuk "Selamat Datang" dan "Statistik" ke bawah */
+  .header {
+    flex-direction: column; 
+    align-items: stretch;
+    gap: 12px; 
+  }
+
+  /* Memperbaiki Quote Harian agar tidak turun */
+  .top-panel {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 18px;
+  }
+  .top-panel > *:first-child {
+    flex: 1.5; /* Progress */
+    min-width: 100px;
+  }
+  .top-panel > *:last-child {
+    flex: 1.5; /* Quote (lebih lebar) */
+    min-width: 150px;
+  }
+
+  /* ▼▼▼ PERBAIKAN UTAMA UNTUK 3 KOTAK TUGAS & 1 KOTAK JAM ▼▼▼ */
+
+  /* Ini adalah container untuk 4 kotak */
+  .stats-row {
+    display: flex;
+    flex-wrap: wrap; /* Izinkan turun baris */
+    gap: 8px; /* Jarak antar kotak */
+  }
+
+  /* Ini menarget SEMUA 4 KOTAK di dalamnya */
+.stats-row > .stat.small {
+  flex: 1 1 0;  /* KUNCI: Paksa semua kotak punya basis 0 dan tumbuh sama rata */
+  text-align: center; 
+  min-width: 0;   /* Hapus lebar minimal agar tidak mengganggu */
+}
+
+  /* Ini HANYA menarget kotak ke-4 (JAM) */
+  .stats-row > .stat.small:nth-child(4) {
+     flex-basis: 100%; /* Paksa lebarnya 100% agar turun baris */
+     flex-grow: 0;
+  }
+  
+  /* ▲▲▲ SELESAI PERBAIKAN ▲▲▲ */
+}
